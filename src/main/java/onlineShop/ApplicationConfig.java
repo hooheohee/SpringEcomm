@@ -29,7 +29,7 @@ public class ApplicationConfig {
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://" + System.getenv("PG_AWS_DB") + "/ecommerce?serverTimezone=UTC");
         dataSource.setUsername("postgres");
-//        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 //        dataSource.setUrl("jdbc:mysql://" + System.getenv("JUPITER_DB") + "/ecommerce?serverTimezone=UTC");
 //        dataSource.setUsername("admin");
         dataSource.setPassword(System.getenv("JUPITER_PASS"));

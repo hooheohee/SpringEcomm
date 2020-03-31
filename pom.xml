@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mz</groupId>
-  <artifactId>SpringEcomm</artifactId>
+  <artifactId>springecomm</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>OnlineShop Maven Webapp</name>
+  <name>SpringEcomm</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -162,6 +162,6 @@
   </dependencies>
 
   <build>
-    <finalName>SpringEcomm</finalName>
+    <finalName>springecomm</finalName>
   </build>
 </project>
