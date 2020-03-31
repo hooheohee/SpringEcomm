@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 public class Application {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
         PaymentAction paymentAction = (PaymentAction) context.getBean("paymentAction");
         paymentAction.pay(new BigDecimal(2));
     }
