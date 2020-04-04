@@ -1,6 +1,7 @@
 package onlineShop.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomePageController {
 
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @GetMapping(value = "/index")
     public String sayIndex() {
         return "index";
     }
@@ -30,7 +31,7 @@ public class HomePageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    @GetMapping(value = "/about")
     public String sayAbout() {
         return "about";
     }
