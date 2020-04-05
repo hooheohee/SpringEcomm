@@ -15,8 +15,8 @@ public class CustomerService {
         customerDAO.addCustomer(customer);
     }
 
-    public Customer getCustomerByUserName(String username) {
-        return customerDAO.getCustomerByUserName(username);
+    public Customer getCustomerByUsername(String username) {
+        return customerDAO.getCustomerByUsername(username);
     }
 
 }

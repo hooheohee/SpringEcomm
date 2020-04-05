@@ -47,7 +47,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="cart in carts.cartItem">
+                <tr ng-repeat="cart in carts.cartItems">
                     <td>{{cart.product.productName}}</td>
                     <td>{{cart.quantity}}</td>
                     <td>{{cart.product.productPrice}}</td>

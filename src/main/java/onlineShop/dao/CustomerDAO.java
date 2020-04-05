@@ -49,19 +49,22 @@ public class CustomerDAO {
         }
     }
 
-    public Customer getCustomerByUserName(String username) {
+    public Customer getCustomerByUsername(String username) {
         User user = null;
         try (Session session = sessionFactory.openSession()) {
-            session.getTransaction();
-            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-            CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
+            session.beginTransaction();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<User> criteriaQuery = builder.createQuery(User.class);
             Root<User> root = criteriaQuery.from(User.class);
-            criteriaQuery.select(root).where(criteriaBuilder.equal(root.get("emailId"), username));
+            criteriaQuery.select(root).where(builder.equal(root.get("emailId"), username));
             user = session.createQuery(criteriaQuery).getSingleResult();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return user != null ? user.getCustomer() : null;
+        if (user != null) {
+            return user.getCustomer();
+        }
+        return null;
     }
 }

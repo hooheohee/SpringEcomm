@@ -31,21 +31,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutUrl("/logout");
-
     }
 
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication().withUser("admin@gmail.com")
-                .password("123")
-                .authorities("ROLE_ADMIN");
+        authenticateAdmin(auth, "admin@gmail.com", "123");
+        authenticateAdmin(auth, "admin2@gmail.com", "123");
+        authenticateUser(auth);
+    }
 
+    private void authenticateAdmin(AuthenticationManagerBuilder auth, String username, String password) throws Exception {
+        auth
+                .inMemoryAuthentication()
+                .withUser(username)
+                .password(password)
+                .authorities("ROLE_ADMIN");
+    }
+
+    private void authenticateUser(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .jdbcAuthentication()
                 .dataSource(dataSource)
                 .usersByUsernameQuery("SELECT emailId, password, enabled FROM users WHERE emailId=?")
                 .authoritiesByUsernameQuery("SELECT emailId, authorities FROM authorities WHERE emailId=?");
-
     }
 
     @SuppressWarnings("deprecation")
@@ -53,9 +60,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public static NoOpPasswordEncoder passwordEncoder() {
         return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
     }
-//    @Bean
-//    public static BCryptPasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder(16);
-//    }
-
 }

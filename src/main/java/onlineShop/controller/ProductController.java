@@ -92,7 +92,8 @@ public class ProductController {
     }
 
     @PostMapping(value = "/admin/product/editProduct/{productId}")
-    public String editProduct(@ModelAttribute(value = "editProductObj") Product product, @PathVariable(value = "productId") int productId) {
+    public String editProduct(@ModelAttribute(value = "editProductObj") Product product,
+                              @PathVariable(value = "productId") int productId) {
         product.setId(productId);
         productService.updateProduct(product);
         return "redirect:/getAllProducts";

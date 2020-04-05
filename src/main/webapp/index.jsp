@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>ShoppingWebSite</title>
+    <title>Spring Ecomm</title>
     <link rel="icon" type="image/x-icon" href="<c:url value="/resource/images/favicon.png"/>"/>
 </head>
 <body>

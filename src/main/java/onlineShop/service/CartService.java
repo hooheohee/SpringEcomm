@@ -11,9 +11,9 @@ import onlineShop.model.Cart;
 public class CartService {
 
     @Autowired
-    private CartDAO cartDao;
+    private CartDAO cartDAO;
 
     public Cart getCartById(int cartId) {
-        return cartDao.getCartById(cartId);
+        return cartDAO.getCartById(cartId);
     }
 }

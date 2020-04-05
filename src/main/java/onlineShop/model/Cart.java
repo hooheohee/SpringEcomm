@@ -30,7 +30,7 @@ public class Cart implements Serializable {
     private Customer customer;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-    private List<CartItem> cartItem;
+    private List<CartItem> cartItems;
 
     private double totalPrice;
 
@@ -42,12 +42,12 @@ public class Cart implements Serializable {
         this.id = id;
     }
 
-    public List<CartItem> getCartItem() {
-        return cartItem;
+    public List<CartItem> getCartItems() {
+        return cartItems;
     }
 
-    public void setCartItem(List<CartItem> cartItem) {
-        this.cartItem = cartItem;
+    public void setCartItem(List<CartItem> cartItems) {
+        this.cartItems = cartItems;
     }
 
     public double getTotalPrice() {
