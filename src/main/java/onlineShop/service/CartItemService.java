@@ -1,12 +1,10 @@
-
 package onlineShop.service;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import onlineShop.dao.CartItemDAO;
 import onlineShop.model.Cart;
 import onlineShop.model.CartItem;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class CartItemService {

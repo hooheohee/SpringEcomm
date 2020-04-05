@@ -1,12 +1,11 @@
 package onlineShop.service;
 
-import java.util.List;
-
+import onlineShop.dao.ProductDAO;
+import onlineShop.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import onlineShop.dao.ProductDAO;
-import onlineShop.model.Product;
+import java.util.List;
 
 @Service
 public class ProductService {

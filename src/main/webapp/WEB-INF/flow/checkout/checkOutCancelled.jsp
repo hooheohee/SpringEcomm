@@ -14,7 +14,7 @@
 
 		<section class="container">
 			<p>
-				<center><a href="<c:url value="/getAllProducts" />" class="btn btn-default">Go to Products page</a></center>
+				<div style="text-align: center;"><a href="<c:url value="/getAllProducts" />" class="btn btn-default">Go to Products page</a></div>
 			</p>
 		</section>
 	</div>

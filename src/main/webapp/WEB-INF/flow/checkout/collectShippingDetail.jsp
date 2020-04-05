@@ -26,7 +26,7 @@
                     <div class="row">
 
                         <div>
-                            <center>Shipping Address</center>
+                            <div style="text-align: center;">Shipping Address</div>
                         </div>
                         <div class="form-group">
                             <label for="address">Address</label>
